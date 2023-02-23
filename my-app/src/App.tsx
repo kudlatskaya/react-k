@@ -5,7 +5,7 @@ import {Rating, RatingValueType} from "./Rating/Rating";
 import OnOff from "./components/OnOff/OnOff";
 import UncontrolledAccordion from "./components/UncontrolledAccordion/UncontrolledAccordion";
 import UncontrolledRating from "./components/UncontrolledRating/UncontrolledRating";
-
+import UncontrolledOnOff from "./components/UncontrolledOnOff/UncontrolledOnOff";
 
 
 function hello() {
@@ -16,8 +16,10 @@ function hello() {
 //hello();
 
 function App(props: any) {
-    let [ ratingValue, setRatingValue ] = useState <RatingValueType>(0);
-    let [ collapsed, setCollapsed ] = useState <boolean>(true);
+    let [ratingValue, setRatingValue] = useState<RatingValueType>(0);
+    let [collapsed, setCollapsed] = useState<boolean>(true);
+    const [on, setOn] = useState<boolean>(false);
+    const [change, setChange] = useState<boolean>(false);
 
     return (
         <div className={"app"}>
@@ -26,16 +28,17 @@ function App(props: any) {
             <p>ControlledAccordion </p>
             <Accordion title={"Menu"} collapsed={collapsed} onClick={setCollapsed}/>
             <p>UncontrolledAccordion </p>
-            <UncontrolledAccordion title={"Menu"} />
-            <UncontrolledAccordion title={"Users"} />
+            <UncontrolledAccordion title={"Menu"}/>
+            <UncontrolledAccordion title={"Users"}/>
             <p>ControlledRating </p>
             <Rating value={ratingValue} onClick={setRatingValue}/>
             <p>UncontrolledRating </p>
-            <UncontrolledRating />
-            <p>UncontrolledOnOff </p>
-            <OnOff/>
+            <UncontrolledRating/>
             <p>ControlledOnOff </p>
-            <OnOff/>
+            <OnOff on={on} onClick={setOn}/>
+            <p>UncontrolledOnOff </p>
+            <UncontrolledOnOff onChange={setChange}/> {change.toString()}
+
         </div>
     );
 }
