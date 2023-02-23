@@ -6,28 +6,38 @@ type RatingPropsType = {
 }
 
 type StarPropsType = {
-    selected: boolean
+    selected: boolean,
+    checkStar: (value: RatingPropsType) => void;
 }
 
 function Star(props: StarPropsType) {
-    if (props.selected === true) {
-        return <span><b>star </b></span>
-    } else {
-        return <span>star</span>
-    }
+    const { selected, checkStar } = props;
 
+    return (selected === true)
+        ? <span onClick={checkStar}>&#9733;</span>
+        : <span onClick={checkStar}>&#9734;</span>
+
+    // if (props.selected === true) {
+    //     return <span><b>star </b></span>
+    // } else {
+    //     return <span>star</span>
+    // }
 }
 
 const UncontrolledRating = () => {
-    const [ value, setValue ] = useState(0);
+    const [ value, setValue ] = useState<RatingPropsType>(0);
+
+    function checkStar(value: RatingPropsType) {
+        setValue(value);
+    }
 
     return (
         <div>
-            <Star selected={ value > 0 }/> <button onClick={() => setValue(1)}>&#9733;</button>
-            <Star selected={ value > 1 }/> <button onClick={() => setValue(2)}>&#9733;</button>
-            <Star selected={ value > 2 }/> <button onClick={() => setValue(3)}>&#9733;</button>
-            <Star selected={ value > 3 }/> <button onClick={() => setValue(4)}>&#9733;</button>
-            <Star selected={ value > 4 }/> <button onClick={() => setValue(5)}>&#9733;</button>
+            <Star selected={ value > 0 } checkStar={checkStar}/>
+            <Star selected={ value > 1 } checkStar={checkStar}/>
+            <Star selected={ value > 2 } checkStar={checkStar}/>
+            <Star selected={ value > 3 } checkStar={checkStar}/>
+            <Star selected={ value > 4 } checkStar={checkStar}/>
         </div>
     );
 };

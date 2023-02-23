@@ -15,7 +15,7 @@ function hello() {
 
 function App(props: any) {
     return (
-        <div>
+        <div className={"app"}>
             {/*<PageTitle title={"This is APP component"}/>*/}
             {/*<PageTitle title={"My friends"}/>*/}
             {/*Article1*/}
@@ -34,8 +34,8 @@ function App(props: any) {
             <p>UncontrolledRating </p>
             <UncontrolledRating />
             <OnOff/>
-            <OnOff/>
-            <OnOff/>
+            {/*<OnOff/>*/}
+            {/*<OnOff/>*/}
         </div>
     );
 }
