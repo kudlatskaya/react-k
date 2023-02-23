@@ -4,6 +4,7 @@ import Accordion from "./components/Accordion/Accordion";
 import {Rating} from "./Rating/Rating";
 import OnOff from "./components/OnOff/OnOff";
 import UncontrolledAccordion from "./components/UncontrolledAccordion/UncontrolledAccordion";
+import UncontrolledRating from "./components/UncontrolledRating/UncontrolledRating";
 
 function hello() {
     //debugger
@@ -30,6 +31,8 @@ function App(props: any) {
             {/*<Rating value={3}/>*/}
             {/*<Rating value={4}/>*/}
             {/*<Rating value={5}/>*/}
+            <p>UncontrolledRating </p>
+            <UncontrolledRating />
             <OnOff/>
             <OnOff/>
             <OnOff/>
