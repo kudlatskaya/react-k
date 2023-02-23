@@ -11,14 +11,13 @@ type RatingPropsType = {
 
 type StarPropsType = {
     selected: boolean,
-    checkStar: (value: number) => void;
-    value: 1 | 2 | 3 | 4 | 5,
+    checkStar: () => void,
 }
 
 function Star(props: StarPropsType) {
-    const { selected, checkStar, value } = props;
+    const { selected, checkStar } = props;
 
-    return <span onClick={ ()=>checkStar(value) }>
+    return <span onClick={ checkStar }>
             { selected ? <>&#9733;</> : <>&#9734;</> }
     </span>
 }
@@ -32,11 +31,11 @@ const UncontrolledRating = () => {
 
     return (
         <div>
-            <Star selected={ value > 0 } checkStar={checkStar} value={1}/>
-            <Star selected={ value > 1 } checkStar={checkStar} value={2}/>
-            <Star selected={ value > 2 } checkStar={checkStar} value={3}/>
-            <Star selected={ value > 3 } checkStar={checkStar} value={4}/>
-            <Star selected={ value > 4 } checkStar={checkStar} value={5}/>
+            <Star selected={ value > 0 } checkStar={() => { checkStar(1) }} />
+            <Star selected={ value > 1 } checkStar={() => { checkStar(2) }} />
+            <Star selected={ value > 2 } checkStar={() => { checkStar(3) }} />
+            <Star selected={ value > 3 } checkStar={() => { checkStar(4) }} />
+            <Star selected={ value > 4 } checkStar={() => { checkStar(5) }} />
         </div>
     );
 };
