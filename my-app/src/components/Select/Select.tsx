@@ -1,21 +1,36 @@
+import {useState} from "react";
+
+export type ItemType = {
+    title: string,
+    value: any,
+}
 
 type SelectPropsType = {
     value: any,
     onChange: (value: any) => void,
     items: ItemType[],
 }
-export type ItemType = {
-    title: string,
-    value: any,
-}
 
 const Select = (props: SelectPropsType) => {
-    const {items} = props;
+    const {items, value, onChange} = props;
+
+    const [isCollapsed, setIsCollapsed] = useState(true);
+
+    const onClickHandler = () => setIsCollapsed(!isCollapsed);
+
+    const itemOnClickHandler = (_value: any) => {
+        onChange(_value)
+        setIsCollapsed(!isCollapsed)
+    }
 
     return (
         <div>
-            <div>{}</div>
-            {items.map(item => <div>{item.title}</div>)}
+            <div onClick={onClickHandler}>{value}</div>
+            {
+                !isCollapsed && (
+                    items.map(item => <div onClick={() => itemOnClickHandler(item.title)}>{item.title}</div>)
+                )
+            }
         </div>
     );
 };

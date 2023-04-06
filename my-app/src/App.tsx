@@ -6,6 +6,7 @@ import OnOff from "./components/OnOff/OnOff";
 import UncontrolledAccordion from "./components/UncontrolledAccordion/UncontrolledAccordion";
 import UncontrolledRating from "./components/UncontrolledRating/UncontrolledRating";
 import UncontrolledOnOff from "./components/UncontrolledOnOff/UncontrolledOnOff";
+import Select from "./components/Select/Select";
 
 
 
@@ -14,6 +15,7 @@ function App() {
     let [collapsed, setCollapsed] = useState<boolean>(true);
     const [on, setOn] = useState<boolean>(false);
     const [change, setChange] = useState<boolean>(false);
+    const [selectValue, setSelectValue] = useState('select')
 
     let users: ItemType[] = [
         {title: 'Dimych', value: 1},
@@ -26,10 +28,16 @@ function App() {
         alert(value)
     }
 
+    const selectOnChange = (value: any) => {
+        setSelectValue(value)
+    }
+
     return (
         <div className={"app"}>
             {/*<PageTitle title={"This is APP component"}/>*/}
             {/*<PageTitle title={"My friends"}/>*/}
+            <p>ControlledSelect </p>
+            <Select items={users} value={selectValue} onChange={selectOnChange}/>
 
             <p>ControlledAccordion </p>
             <Accordion title={"Users"}
