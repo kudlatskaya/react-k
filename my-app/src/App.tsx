@@ -24,6 +24,8 @@ function App() {
         {title: 'Anna', value: 4},
     ]
 
+    let cities: string[] = ['Minsk', 'Mosсow', 'Kuiv', 'London'];
+
     const itemOnClickHandler = (value: any) => {
         alert(value)
     }
@@ -37,7 +39,7 @@ function App() {
             {/*<PageTitle title={"This is APP component"}/>*/}
             {/*<PageTitle title={"My friends"}/>*/}
             <p>ControlledSelect </p>
-            <Select items={users} value={selectValue} onChange={selectOnChange}/>
+            <Select items={cities} value={selectValue} onChange={selectOnChange}/>
 
             <p>ControlledAccordion </p>
             <Accordion title={"Users"}

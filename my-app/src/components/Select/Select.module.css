@@ -1,0 +1,26 @@
+.select {
+    border: 2px solid darkorchid;
+    border-radius: 5px;
+    width: 100px;
+}
+
+.list {
+    position: absolute;
+    border: 1px solid dimgray;
+    border-radius: 5px;
+    margin-top: 10px;
+    width: 100px;
+    background-color: #eee;
+}
+
+.item:hover {
+    background-color: darkorchid;
+}
+
+.selected {
+    background-color: darkorchid;
+}
+
+.hidden {
+    display: none;
+}
