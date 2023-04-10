@@ -9,9 +9,10 @@ type AccordionPropsType = {
 type ActionType = {
     type: string,
 }
+const TOGGLE_COLLAPSED = 'TOGGLE-COLLAPSED'
 
 const reducer = (state: boolean, action: ActionType) => {
-    if(action.type === 'TOGGLE-COLLAPSED') {
+    if(action.type === TOGGLE_COLLAPSED) {
         return !state;
     }
 
