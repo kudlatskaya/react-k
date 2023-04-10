@@ -1,4 +1,4 @@
-import {KeyboardEvent, MouseEventHandler, useState} from "react";
+import {KeyboardEvent, MouseEventHandler, useEffect, useState} from "react";
 import s from "./Select.module.css"
 
 type SelectPropsType = {
@@ -21,40 +21,36 @@ const Select = (props: SelectPropsType) => {
         setIsCollapsed(!isCollapsed)
     }
 
-    // const onMouseOverHandler = (e: MouseEventHandler<HTMLParagraphElement>) => {
-    //     setSelectedItem()
-    // }
-    let classHidden = '';
-    const onBlurHandler = () => {
-        classHidden = s.hidden
-    }
-
     const onKeyDownHandler = (e: KeyboardEvent<HTMLDivElement>) => {
+            e.preventDefault();
+
             let index = items.indexOf(hoveredItem);
 
-            switch (e.key) {
-                case 'ArrowTop':
-                    if(index > 0) {
-                        setHoveredItem(items[--index]);
-                        setSelectedItem(items[index]);
-                    }
-                    break;
-                case 'ArrowDown':
-                    if (index < items.length) {
-                        setHoveredItem(items[++index]);
-                        setSelectedItem(items[index]);
-                    }
-                    break;
-                case 'Enter':
-                    setIsCollapsed(!isCollapsed);
-                    break;
+            if( index >= 0) {
+                switch (e.key) {
+                    case 'ArrowUp':
+                        if(index > 0) {
+                            setHoveredItem(items[--index]);
+                            setSelectedItem(items[index]);
+                        }
+                        break;
+                    case 'ArrowDown':
+                        if (index < items.length - 1) {
+                            setHoveredItem(items[++index]);
+                            setSelectedItem(items[index]);
+                        }
+                        break;
+                    case 'Enter':
+                        setIsCollapsed(!isCollapsed);
+                        break;
+                }
             }
     }
 
     return (
         <div onKeyDown={onKeyDownHandler} tabIndex={0}>
             <div onClick={onClickHandler} className={s.select}>{selectedItem}</div>
-            <div className={(!isCollapsed ? s.list : '') + ' ' + classHidden} onBlur={onBlurHandler}>
+            <div className={!isCollapsed ? s.list : ''} >
                 {
                     !isCollapsed && (
                         items.map((item, index) => <p key={index}
