@@ -15,7 +15,7 @@ function App() {
     let [collapsed, setCollapsed] = useState<boolean>(true);
     const [on, setOn] = useState<boolean>(false);
     const [change, setChange] = useState<boolean>(false);
-    const [selectValue, setSelectValue] = useState('select')
+    // const [selectValue, setSelectValue] = useState('select')
 
     let users: ItemType[] = [
         {title: 'Dimych', value: 1},
@@ -30,16 +30,16 @@ function App() {
         alert(value)
     }
 
-    const selectOnChange = (value: any) => {
-        setSelectValue(value)
-    }
+    // const selectOnChange = (value: any) => {
+    //     setSelectValue(value)
+    // }
 
     return (
         <div className={"app"}>
             {/*<PageTitle title={"This is APP component"}/>*/}
             {/*<PageTitle title={"My friends"}/>*/}
             <p>ControlledSelect </p>
-            <Select items={cities} value={selectValue} onChange={selectOnChange}/>
+            <Select items={cities} value={cities[0]}/>
 
             <p>ControlledAccordion </p>
             <Accordion title={"Users"}
