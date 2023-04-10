@@ -1,3 +1,5 @@
+import AccordionTitle from "./AccordionTitle";
+import AccordionBody, {ItemType} from "./AccordionBody";
 
 type AccordionPropsType = {
     title: string,
@@ -16,37 +18,5 @@ function Accordion(props: AccordionPropsType) {
     </div>
 }
 
-type AccordionTitlePropsType = {
-    title: string,
-    collapsed: boolean,
-    onClick: (value: boolean) => void,
-}
-
-function AccordionTitle(props: AccordionTitlePropsType) {
-    const {title, collapsed, onClick} = props;
-
-    return <h3 onClick={() => onClick(!collapsed)}>{title}</h3>
-}
-
-
-export type ItemType = {
-    title: string,
-    value: any,
-}
-
-type AccordionBodyPropsType = {
-    items: ItemType[],
-    onClickCallBack: (value: any) => void,
-}
-
-function AccordionBody(props: AccordionBodyPropsType) {
-    const {items, onClickCallBack} = props;
-
-    return <ul>
-        {
-            items.map((item, index) => <li key={index} onClick={() => onClickCallBack(item.value)}>{item.title}</li>)
-        }
-    </ul>
-}
 
 export default Accordion;

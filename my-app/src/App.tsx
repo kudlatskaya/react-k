@@ -1,12 +1,13 @@
 import {useState} from 'react';
 import './App.css';
-import Accordion, {ItemType} from "./components/Accordion/Accordion";
+import Accordion from "./components/Accordion/Accordion";
 import {Rating, RatingValueType} from "./Rating/Rating";
 import OnOff from "./components/OnOff/OnOff";
 import UncontrolledAccordion from "./components/UncontrolledAccordion/UncontrolledAccordion";
 import UncontrolledRating from "./components/UncontrolledRating/UncontrolledRating";
 import UncontrolledOnOff from "./components/UncontrolledOnOff/UncontrolledOnOff";
 import Select from "./components/Select/Select";
+import {ItemType} from "./components/Accordion/AccordionBody";
 
 
 
@@ -15,7 +16,6 @@ function App() {
     let [collapsed, setCollapsed] = useState<boolean>(true);
     const [on, setOn] = useState<boolean>(false);
     const [change, setChange] = useState<boolean>(false);
-    // const [selectValue, setSelectValue] = useState('select')
 
     let users: ItemType[] = [
         {title: 'Dimych', value: 1},
@@ -29,10 +29,6 @@ function App() {
     const itemOnClickHandler = (value: any) => {
         alert(value)
     }
-
-    // const selectOnChange = (value: any) => {
-    //     setSelectValue(value)
-    // }
 
     return (
         <div className={"app"}>
