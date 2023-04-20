@@ -33,15 +33,16 @@ function App() {
 
     return (
         <div className={"app"}>
-            {/*<PageTitle title={"This is APP component"}/>*/}
-            {/*<PageTitle title={"My friends"}/>*/}
-            <p>UseMemo </p>
+            <h1>React Memo </h1>
             <Example/>
 
-            <p>ControlledSelect </p>
+            <h1>React Memo </h1>
+            <Example/>
+
+            <h1>ControlledSelect </h1>
             <Select items={cities} value={cities[0]}/>
 
-            <p>ControlledAccordion </p>
+            <h1>ControlledAccordion </h1>
             <Accordion title={"Users"}
                        collapsed={collapsed}
                        onClick={setCollapsed}
@@ -49,20 +50,20 @@ function App() {
                        onClickCallBack={itemOnClickHandler}
             />
 
-            <p>UncontrolledAccordion </p>
+            <h1>UncontrolledAccordion </h1>
             <UncontrolledAccordion title={"Menu"}/>
             <UncontrolledAccordion title={"Users"}/>
 
-            <p>ControlledRating </p>
+            <h1>ControlledRating </h1>
             <Rating value={ratingValue} onClick={setRatingValue}/>
 
-            <p>UncontrolledRating </p>
+            <h1>UncontrolledRating </h1>
             <UncontrolledRating/>
 
-            <p>ControlledOnOff </p>
+            <h1>ControlledOnOff </h1>
             <OnOff on={on} onClick={setOn}/>
 
-            <p>UncontrolledOnOff </p>
+            <h1>UncontrolledOnOff </h1>
             <UncontrolledOnOff onChange={setChange}/> {change.toString()}
 
         </div>

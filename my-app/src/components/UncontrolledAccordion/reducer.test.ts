@@ -1,4 +1,4 @@
-import reducer, {StateType, TOGGLE_COLLAPSED} from "./reducer";
+import reducer, {StateType} from "./reducer";
 
 test('the reducer should reverse the value ', () => {
     // data
@@ -6,7 +6,7 @@ test('the reducer should reverse the value ', () => {
         collapsed: false
     }
     //action
-    const newState = reducer(state, {type: TOGGLE_COLLAPSED})
+    const newState = reducer(state, {type: 'TOGGLE-COLLAPSED'})
 
     //expectation
     expect(newState.collapsed).toBe(true);
