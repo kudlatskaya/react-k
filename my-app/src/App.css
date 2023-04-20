@@ -2,3 +2,8 @@
     width: 680px;
     margin: 20px auto;
 }
+
+.selects {
+    display: flex;
+
+}

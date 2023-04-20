@@ -26,4 +26,5 @@ const UsersSecret = (props: { users: string[] }) => {
     </div>
 }
 
+// memo - хок, позволяет перерисовать Users, только если изменился  UsersSecret
 const Users = React.memo(UsersSecret);

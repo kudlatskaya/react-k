@@ -11,11 +11,11 @@ const MemoComponent = () => {
         let result = 1
 
         for(let i = 1; i <= a; i++) {
-            let fake = 0
-            while(fake < 100000000) {
-                fake++
-                let fakeVal = Math.random()
-            }
+            //let fake = 0
+            // while(fake < 100000000) {
+            //     fake++
+            //     let fakeVal = Math.random()
+            // }
             result *= i
         }
 
