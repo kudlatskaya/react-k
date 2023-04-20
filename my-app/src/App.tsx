@@ -9,6 +9,7 @@ import UncontrolledOnOff from "./components/UncontrolledOnOff/UncontrolledOnOff"
 import Select from "./components/Select/Select";
 import {ItemType} from "./components/Accordion/AccordionBody";
 import {Example} from "./components/ReactMemo";
+import MemoComponent from "./components/useMemo";
 
 
 
@@ -33,8 +34,8 @@ function App() {
 
     return (
         <div className={"app"}>
-            <h1>React Memo </h1>
-            <Example/>
+            <h1>useMemo </h1>
+            <MemoComponent/>
 
             <h1>React Memo </h1>
             <Example/>
