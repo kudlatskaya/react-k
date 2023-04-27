@@ -12,6 +12,7 @@ import {Example} from "./components/ReactMemo";
 import MemoComponent from "./components/useMemo";
 import MemoComponentTotal from "./components/reactMemo_useMemo";
 import UseCallBack from "./components/useCallback";
+import SelectUseMemo, {locationType} from "./components/Select/SelectUseMemo";
 
 
 function App() {
@@ -29,12 +30,23 @@ function App() {
 
     let cities: string[] = ['Minsk', 'Mosсow', 'Kuiv', 'London'];
 
+    let locations: locationType[] = [
+        {city: 'Minsk', country: 'Belarus', population: 800},
+        {city: 'Mosсow', country: 'Russia', population: 2000},
+        {city: 'Brest', country: 'Belarus', population: 500},
+        {city: 'Kyiv', country: 'Ukraine', population: 1001},
+    ];
+
     const itemOnClickHandler = (value: any) => {
         alert(value)
     }
 
     return (
         <div className={"app"}>
+
+            {/*not done*/}
+            <h1>select + useMemo</h1>
+            <SelectUseMemo cities={locations}/>
 
             <h1>useCallback</h1>
             <UseCallBack/>

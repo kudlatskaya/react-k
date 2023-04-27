@@ -6,7 +6,7 @@ type SelectPropsType = {
     items: string[],
 }
 
-const Select = (props: SelectPropsType) => {
+const Select = (props: SelectPropsType) => { console.log('select')
     const {items, value} = props;
 
     const [isCollapsed, setIsCollapsed] = useState(true);
