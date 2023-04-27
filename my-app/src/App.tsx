@@ -11,7 +11,7 @@ import {ItemType} from "./components/Accordion/AccordionBody";
 import {Example} from "./components/ReactMemo";
 import MemoComponent from "./components/useMemo";
 import MemoComponentTotal from "./components/reactMemo_useMemo";
-import MemoSelect, {CityType} from "./components/Select/MemoSelect";
+import UseCallBack from "./components/useCallback";
 
 
 function App() {
@@ -28,11 +28,6 @@ function App() {
     ]
 
     let cities: string[] = ['Minsk', 'Mosсow', 'Kuiv', 'London'];
-    let citiesObjects: CityType[] = [
-        {city: 'Minsk', country: 'Belarus', population: 1000},
-        {city: 'Mosсow', country: 'Russia', population: 10000},
-        {city: 'Brest', country: 'Belarus', population: 600},
-    ]
 
     const itemOnClickHandler = (value: any) => {
         alert(value)
@@ -40,12 +35,9 @@ function App() {
 
     return (
         <div className={"app"}>
-            <h1>select + useMemo </h1>
-            <div className={"selects"}>
-                <MemoSelect items={citiesObjects} value={citiesObjects[0].city} id={1}/>
-                <MemoSelect items={citiesObjects} value={citiesObjects[0].city} id={2}/>
-                <MemoSelect items={citiesObjects} value={citiesObjects[0].city} id={3}/>
-            </div>
+
+            <h1>useCallback</h1>
+            <UseCallBack/>
 
             <h1>react.Memo + useMemo </h1>
             <MemoComponentTotal/>

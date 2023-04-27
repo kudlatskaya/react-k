@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/../1-todolist/.idea/1-todolist.iml" filepath="$PROJECT_DIR$/../1-todolist/.idea/1-todolist.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../codewars/.idea/codewars.iml" filepath="$PROJECT_DIR$/../codewars/.idea/codewars.iml" />
       <module fileurl="file://$PROJECT_DIR$/../ekzam/.idea/ekzam.iml" filepath="$PROJECT_DIR$/../ekzam/.idea/ekzam.iml" />
       <module fileurl="file://$PROJECT_DIR$/../hws2-master/.idea/hws2-master.iml" filepath="$PROJECT_DIR$/../hws2-master/.idea/hws2-master.iml" />
       <module fileurl="file://$PROJECT_DIR$/../samurai-way-main/.idea/samurai-way-main.iml" filepath="$PROJECT_DIR$/../samurai-way-main/.idea/samurai-way-main.iml" />
