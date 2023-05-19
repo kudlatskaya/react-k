@@ -13,6 +13,7 @@ import MemoComponent from "./components/useMemo";
 import MemoComponentTotal from "./components/reactMemo_useMemo";
 import UseCallBack from "./components/useCallback";
 import SelectUseMemo, {locationType} from "./components/Select/SelectUseMemo";
+import UseState from "./components/useState/useState";
 
 
 function App() {
@@ -43,6 +44,8 @@ function App() {
 
     return (
         <div className={"app"}>
+            <h1>useState</h1>
+            <UseState/>
 
             {/*not done*/}
             <h1>select + useMemo</h1>
