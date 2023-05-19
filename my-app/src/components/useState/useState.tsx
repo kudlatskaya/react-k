@@ -3,17 +3,19 @@ import s from './useState.module.css';
 
 const generateData = () => {
     console.log('generateData')
-    return 123456789
+    return 10
 }
 
 const UseState = () => {
     console.log('UseState')
     const [counter, setCounter] = useState(generateData)
 
+    const changer = (state: number) => state + 1
+
     return (
         <div>
             <div>{counter}</div>
-            <button className={s.button} onClick={() => setCounter(counter + 1)}>counter</button>
+            <button className={s.button} onClick={() => setCounter(changer)}>counter</button>
         </div>
     );
 };
