@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import s from './useState/useState.module.css';
+import s from '../useState/useState.module.css';
 
 const UseEffect = () => {
     const [counter, setCounter] = useState(1)

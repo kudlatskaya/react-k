@@ -14,7 +14,8 @@ import MemoComponentTotal from "./components/reactMemo_useMemo";
 import UseCallBack from "./components/useCallback";
 import SelectUseMemo, {locationType} from "./components/Select/SelectUseMemo";
 import UseState from "./components/useState/useState";
-import UseEffect from "./components/useEffect";
+import UseEffect from "./components/useEffect/useEffect";
+import Clock from "./components/useEffect/Сlock/SetTimeout";
 
 
 function App() {
@@ -45,6 +46,9 @@ function App() {
 
     return (
         <div className={"app"}>
+            <h1>useEffect + setTimeout</h1>
+            <Clock/>
+
             <h1>useEffect</h1>
             <UseEffect/>
 
