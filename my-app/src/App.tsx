@@ -15,7 +15,8 @@ import UseCallBack from "./components/useCallback";
 import SelectUseMemo, {locationType} from "./components/Select/SelectUseMemo";
 import UseState from "./components/useState/useState";
 import UseEffect from "./components/useEffect/useEffect";
-import Clock from "./components/useEffect/Сlock/SetTimeout";
+import SetInterval from "./components/useEffect/Сlock/SetInterval";
+import Clock from "./components/useEffect/AnalogClock/Clock";
 
 
 function App() {
@@ -46,8 +47,12 @@ function App() {
 
     return (
         <div className={"app"}>
+            <h1>clock + useEffect</h1>
+            <Clock mode={'digital'}/>
+            <Clock mode={'analog'}/>
+
             <h1>useEffect + setTimeout</h1>
-            <Clock/>
+            <SetInterval/>
 
             <h1>useEffect</h1>
             <UseEffect/>
