@@ -17,6 +17,7 @@ import UseState from "./components/useState/useState";
 import UseEffect from "./components/useEffect/useEffect";
 import SetInterval from "./components/useEffect/Сlock/SetInterval";
 import Clock from "./components/useEffect/AnalogClock/Clock";
+import ResetEffect from "./components/useEffect/ResetEffect";
 
 
 function App() {
@@ -47,6 +48,9 @@ function App() {
 
     return (
         <div className={"app"}>
+            <h1>reset useEffect</h1>
+            <ResetEffect/>
+
             <h1>clock + useEffect</h1>
             <Clock mode={'digital'}/>
             <Clock mode={'analog'}/>
