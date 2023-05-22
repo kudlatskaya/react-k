@@ -14,6 +14,7 @@ import MemoComponentTotal from "./components/reactMemo_useMemo";
 import UseCallBack from "./components/useCallback";
 import SelectUseMemo, {locationType} from "./components/Select/SelectUseMemo";
 import UseState from "./components/useState/useState";
+import UseEffect from "./components/useEffect";
 
 
 function App() {
@@ -44,6 +45,9 @@ function App() {
 
     return (
         <div className={"app"}>
+            <h1>useEffect</h1>
+            <UseEffect/>
+
             <h1>useState</h1>
             <UseState/>
 
